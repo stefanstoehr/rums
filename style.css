@@ -1,0 +1,370 @@
+html {
+    font-size: 16px;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    font-family: 'Open Sans', 'Source Sans Pro', Arial, sans-serif;
+    background-color:#c5c5c5;
+}
+
+newborehole {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+deleteborehole {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+circleplus {
+    width: 100px;
+    height: 100px;
+    background-color:#c5c5c5;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+createmodel {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+circlegear {
+    width: 100px;
+    height: 100px;
+    background-color:#000000;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container { 
+    height:100vh; 
+    display: grid;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    grid-template-rows: 9% 10% 3% 65% 13%; 
+    grid-template-columns: 7% 40.5% 5% 40.5% 7%; 
+    grid-template-areas:  
+    "header header header header help" 
+    "navtopleft epsg number subject navtopright"
+    "points points points points points"
+    "navleft data data data navright" 
+    "foot1 foot2 generate foot4 foot5";
+} 
+
+/*@media screen and (min-width: 44.001em) { 
+    .container {
+        height:100vh; 
+        display: grid;
+        margin: 0;
+        overflow: hidden;
+        grid-template-rows: 5% 45% 45% 5%; 
+        grid-template-columns: 1rem 1rem 1rem;; 
+        grid-template-areas:  
+            "header header header" 
+            "preview viewer map"
+            "comments psets ai"
+            "footer footer footer" 
+        ;
+    } 
+}*/
+
+header {
+    grid-area: header;
+    color: black;
+    font-size: 1rem;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+points {
+    grid-area: points;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+navtopleft {
+    grid-area: navtopleft;
+    font-size: 1rem;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+epsg {
+    grid-area: epsg;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 15px;
+}
+
+number {
+    grid-area: number;
+    background: #c5c5c5;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+subject {
+    grid-area: subject;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+navtopright {
+    grid-area: navtopright;
+    font-size: 1rem;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+navleft {
+    grid-area: navleft;
+    font-size: 1rem;
+}
+
+data {
+    width: 90%;
+    height: 90%;
+    grid-area: data;
+    font-size: 1rem;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+navright {
+    grid-area: navright;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 15px;
+}
+
+foot1 {
+    grid-area: foot1;
+    font-size: 1rem;
+    margin: 0;
+}
+
+foot2 {
+    grid-area: foot2;
+    font-size: 1rem;
+}
+
+generate {
+    grid-area: generate;
+    font-size: 1rem;
+}
+
+foot4 {
+    grid-area: foot4;
+    font-size: 1rem;
+}
+
+foot5 {
+    grid-area: foot5;
+    font-size: 1rem;
+}
+
+rums {
+    padding-left: 5px;
+    padding-right: 25px;
+}
+
+github {
+    padding-left: 5px;
+    padding-right: 25px;
+}
+
+stats {
+    padding-left: 5px;
+    padding-right: 25px;
+}
+
+license {
+    padding-left: 5px;
+    padding-right: 25px;
+}
+
+mail {
+    padding-left: 5px;
+}
+
+help {
+    grid-area: help;
+    font-size: 1rem;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+circle {
+    width: 60px;
+    height: 60px;
+    aspect-ratio: 1 / 1;
+    background-color:#c5c5c5;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 1.5rem;
+}
+
+dots {
+    width: 10px;
+    height: 10px;
+    aspect-ratio: 1 / 1;
+    background-color: #000000;
+    border-radius: 50%; /* Macht das Element rund */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+dotborder {
+    width: 14px;
+    height: 14px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%; /* Macht das Element rund */
+    border: 1px solid #000000; /* Schwarzer Rand */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*EPSG-INPUT*/
+
+input {
+  width: 100px;
+  padding: 5px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  background-color:#c5c5c5;
+}
+
+/*SWITCH*/
+
+schwitsch {
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+    margin-left: 5px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 17px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #c5c5c5;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #63b85d;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+  }
+
+/*SWITCH-ENDE*/
