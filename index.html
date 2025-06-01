@@ -12,27 +12,45 @@
     <deleteborehole><circleplus><img src="delete.svg" style="width:50px; height:auto; transform:rotate(45deg);"></circleplus></deleteborehole>
     <createmodel><circlegear><img src="gear.svg" style="width: 50px; height: auto"></circlegear></createmodel>
     <div class="container"> 
-        <header><img src="logo.svg"><rums>Rums</rums><img src="logo.svg" style="transform: rotate(90deg);"><github>Code</github></header>
-        <help>Help
+        <header><img src="github.svg"><rums>Code</rums><img src="love.svg"><donate>Take</donate></header>
+        <logo><img src="rums.svg" style="width:40px; height:auto"></logo>
+        <help>Clip<img src="play.svg" style="padding-left:5px; padding-right:25px">Help
             <schwitsch><label class="switch">
                 <input type="checkbox">
                 <span class="slider round"></span>
             </label></schwitsch>
         </help>
-        <navtopleft><img src="left.svg" style="padding-right:5px; width:25px; height:auto">back</navtopleft>
-        <epsg><input type="text" placeholder="EPSG-Code"><img src="check.svg" style="padding-left: 5px;"></epsg>
-        <number><circle>1</circle></number>
-        <subject>of 1 borehole</subject>
-        <navtopright>next<img src="right.svg" style="padding-left:5px; width:25px; height:auto"></navtopright>
-        <points><dotborder><dots></dots></dotborder></points>
+       
+        <navtopleft><img src="left.svg" style="padding-right:5px; width:25px; height:25px">back</navtopleft>
+        <navtopright>next<img src="right.svg" style="padding-left:5px; width:25px; height:25px"></navtopright>
+        
+        <!--CONTROLL-CENTER-->
+        <numcircle>1
+            <input id="epsg-input" type="text" placeholder="EPSG">
+            <img id="epsg-check" src="check.svg">
+            <subject>of 100 holes</subject>
+            <dotholes><dotborder><dots></dots></dotborder></dotholes>
+        </numcircle>
+        <!--END-OF-CONTROLL-CENTER-->
+       
         <navleft></navleft>    
         <data>user input</data>
         <navright></navright>
-        <foot1>empty</foot1>
-        <foot2>empty</foot2>
-        <generate>generate</generate>
-        <foot4>empty</foot4>
-        <foot5>empty</foot5>
+
+        <copyright>
+            <a href="https://github.com/stefanstoehr" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="element"><img src="testo.png"></div>
+            </a>
+            <a href="https://github.com/stefanstoehr" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="element" style="padding-left: 5px;">© by S. Stoehr 2025</div>
+            </a>
+        </copyright>
+        <license>
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"target="_blank" style="text-decoration: none; color: inherit;">
+                <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+            </a>
+        </license>
+
     </div>
 </body>
 </html>

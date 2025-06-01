@@ -85,32 +85,15 @@ circlegear {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    grid-template-rows: 9% 10% 3% 65% 13%; 
-    grid-template-columns: 7% 40.5% 5% 40.5% 7%; 
+    grid-template-rows: 8% 12% 5% 65% 10%; 
+    grid-template-columns: 7% 30% 26% 30% 7%; 
     grid-template-areas:  
-    "header header header header help" 
-    "navtopleft epsg number subject navtopright"
-    "points points points points points"
+    "header header logo help help" 
+    "navtopleft epsg numcircle subject navtopright"
+    "spacer spacer spacer spacer spacer"
     "navleft data data data navright" 
-    "foot1 foot2 generate foot4 foot5";
-} 
-
-/*@media screen and (min-width: 44.001em) { 
-    .container {
-        height:100vh; 
-        display: grid;
-        margin: 0;
-        overflow: hidden;
-        grid-template-rows: 5% 45% 45% 5%; 
-        grid-template-columns: 1rem 1rem 1rem;; 
-        grid-template-areas:  
-            "header header header" 
-            "preview viewer map"
-            "comments psets ai"
-            "footer footer footer" 
-        ;
-    } 
-}*/
+    "copyright copyright copyright license license";
+}
 
 header {
     grid-area: header;
@@ -119,13 +102,17 @@ header {
     padding-left: 15px;
     display: flex;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-points {
-    grid-area: points;
+logo {
+    grid-area: logo;
+    color: black;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 navtopleft {
@@ -136,31 +123,92 @@ navtopleft {
     align-items: center;
 }
 
-epsg {
-    grid-area: epsg;
-    font-size: 1rem;
+/*CONTROLL-CENTER*/
+
+numcircle {
+    grid-area: numcircle;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    aspect-ratio: 1 / 1;
+    background-color:#c5c5c5;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 0, 0);
     display: flex;
     align-items: center;
-    justify-content: right;
-    padding-right: 15px;
+    justify-content: center;
+    margin: auto;
+    font-size: 1.5rem;
 }
 
-number {
-    grid-area: number;
-    background: #c5c5c5;
-    font-size: 1.5rem;
+#epsg-input {
+    position: absolute;
+    width: 80px;
+    height: 20px;
+    background-color:#c5c5c5;
+    margin-right: 170px;
+    z-index: 1000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+#epsg-check {
+    position: absolute;
+    margin-right: 110px;
+    z-index: 1000;
+}
+
+subject {
+    position: absolute;
+    width: 80px;
+    height: 20px;
+    background-color:#000000;
+    margin-left: 170px;
+    z-index: 1000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    color:#c5c5c5;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-subject {
-    grid-area: subject;
-    font-size: 1rem;
+dotholes {
+    position: absolute;
+    width: auto;
+    height: 20px;
+    margin-top: 90px;
+    z-index: 1000;
     display: flex;
     align-items: center;
-    padding-left: 15px;
+    justify-content: center;
 }
+
+dots {
+    width: 10px;
+    height: 10px;
+    aspect-ratio: 1 / 1;
+    background-color: #000000;
+    border-radius: 50%; /* Macht das Element rund */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+dotborder {
+    width: 14px;
+    height: 14px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%; /* Macht das Element rund */
+    border: 1px solid #000000; /* Schwarzer Rand */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*END*/
 
 navtopright {
     grid-area: navtopright;
@@ -198,54 +246,14 @@ navright {
     padding-right: 15px;
 }
 
-foot1 {
-    grid-area: foot1;
-    font-size: 1rem;
-    margin: 0;
-}
-
-foot2 {
-    grid-area: foot2;
-    font-size: 1rem;
-}
-
-generate {
-    grid-area: generate;
-    font-size: 1rem;
-}
-
-foot4 {
-    grid-area: foot4;
-    font-size: 1rem;
-}
-
-foot5 {
-    grid-area: foot5;
-    font-size: 1rem;
-}
-
 rums {
     padding-left: 5px;
     padding-right: 25px;
 }
 
-github {
+donate {
     padding-left: 5px;
     padding-right: 25px;
-}
-
-stats {
-    padding-left: 5px;
-    padding-right: 25px;
-}
-
-license {
-    padding-left: 5px;
-    padding-right: 25px;
-}
-
-mail {
-    padding-left: 5px;
 }
 
 help {
@@ -255,55 +263,7 @@ help {
     display: flex;
     align-items: center;
     justify-content: right;
-}
-
-circle {
-    width: 60px;
-    height: 60px;
-    aspect-ratio: 1 / 1;
-    background-color:#c5c5c5;
-    border-radius: 50%;
-    border: 1px solid rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    font-size: 1.5rem;
-}
-
-dots {
-    width: 10px;
-    height: 10px;
-    aspect-ratio: 1 / 1;
-    background-color: #000000;
-    border-radius: 50%; /* Macht das Element rund */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-dotborder {
-    width: 14px;
-    height: 14px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%; /* Macht das Element rund */
-    border: 1px solid #000000; /* Schwarzer Rand */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/*EPSG-INPUT*/
-
-input {
-  width: 100px;
-  padding: 5px;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-  background-color:#c5c5c5;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /*SWITCH*/
@@ -368,3 +328,35 @@ schwitsch {
   }
 
 /*SWITCH-ENDE*/
+
+copyright {
+    grid-area: copyright;
+    grid-template-columns: auto auto;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 15px;
+}
+
+copyright img {
+    border-radius: 50%; /* Macht das Bild rund */
+    border: 1px solid #000000; /* Fügt einen schwarzen Rand hinzu */
+    width: 2em; /* Größe des Bildes */
+    height: 2em; /* Stellt sicher, dass das Bild quadratisch bleibt */
+    object-fit: cover; /* Schneidet das Bild passend zu einem Kreis zu */
+}
+
+.element {
+    width: auto;
+    height: auto;
+  }
+
+license {
+    grid-area: license;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 15px;
+}
