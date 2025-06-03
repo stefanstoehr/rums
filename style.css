@@ -88,7 +88,7 @@ circlegear {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    grid-template-rows: 8% 12% 2% 65% 13%; 
+    grid-template-rows: 8% 12% 2% 60% 18%; 
     grid-template-columns: 7% 30% 26% 30% 7%; 
     grid-template-areas:  
     "header header logo help help" 
@@ -218,17 +218,14 @@ navtopleft {
 }
 data {
     width: 90%;
-    height: 80%;
+    height: 90%;
     grid-area: data;
     position: relative;
     font-size: 1rem;
     border: 2px solid rgb(0, 0, 0);
     border-radius: 15px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
