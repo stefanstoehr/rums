@@ -89,8 +89,8 @@ circlegear {
     grid-template-columns: 7% 30% 26% 30% 7%; 
     grid-template-areas:  
     "header header logo help help" 
-    "navtopleft epsg numcircle subject navtopright"
-    "spacer spacer spacer spacer spacer"
+    ". epsg numcircle subject navtopright"
+    ". navtopleft . . ."
     "navleft data data data navright" 
     "copyright copyright copyright license license";
 }
@@ -231,7 +231,7 @@ data {
     font-size: 1rem;
     border: 2px solid rgb(0, 0, 0);
     border-radius: 15px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
