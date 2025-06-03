@@ -7,10 +7,11 @@ koords-eingabe zoomt vom spherical globe zur cartesian map
 
 pass auf: ...
 
-bei mobilen endgeräten wird der footer oft überdeckt, verstehen aber absolute positionen (siehe Kreis-Buttons)
+CHECK! bei mobilen endgeräten wird der footer oft überdeckt, verstehen aber absolute positionen (siehe Kreis-Buttons)
 
 im dunkel-modus des tablets sieht die seite farblich ganz anders aus, der "Controller-Dot" hat keinen umring
 
-back/next-buttons müssen an die ecken des "user-inputs" rutschen
+CHECK! back/next-buttons müssen an die ecken des "user-inputs" rutschen
 
 das logo reduzieren um eine ebene   
+

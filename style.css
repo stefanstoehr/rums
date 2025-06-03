@@ -9,21 +9,7 @@ body {
     font-family: Arial, sans-serif;
     overflow: hidden;
     font-family: 'Open Sans', 'Source Sans Pro', Arial, sans-serif;
-    background-color:#c5c5c5;
-}
-
-newborehole {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    background-color:#000000;
 }
 
 deleteborehole {
@@ -38,6 +24,22 @@ deleteborehole {
     align-items: center;
     justify-content: center;
     text-align: center;
+    z-index: 1000;
+}
+
+newborehole {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1000;
 }
 
 circleplus {
@@ -46,7 +48,7 @@ circleplus {
     background-color:#c5c5c5;
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,15 +67,16 @@ createmodel {
     justify-content: center;
     text-align: center;
     font-size: 1rem;
+    z-index: 1000;
 }
 
 circlegear {
     width: 100px;
     height: 100px;
-    background-color:#000000;
+    background-color:#c5c5c5;
     border-radius: 50%;
     border: 2px solid rgb(0, 0, 0);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,14 +88,14 @@ circlegear {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    grid-template-rows: 8% 12% 5% 65% 10%; 
+    grid-template-rows: 8% 12% 2% 65% 13%; 
     grid-template-columns: 7% 30% 26% 30% 7%; 
     grid-template-areas:  
     "header header logo help help" 
-    ". epsg numcircle subject navtopright"
-    ". navtopleft . . ."
-    "navleft data data data navright" 
-    "copyright copyright copyright license license";
+    ". epsg numcircle subject ."
+    ". . . . ."
+    ". data data data ." 
+    ". . . . .";
 }
 
 header {
@@ -115,14 +118,6 @@ logo {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-navtopleft {
-    grid-area: navtopleft;
-    font-size: 1rem;
-    padding-left: 15px;
-    display: flex;
-    align-items: center;
-}
-
 /*CONTROLL-CENTER*/
 
 numcircle {
@@ -134,6 +129,7 @@ numcircle {
     background-color:#c5c5c5;
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,6 +145,7 @@ numcircle {
     margin-right: 170px;
     z-index: 1000;
     border: 1px solid #000000;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     font-size: 0.8rem;
 }
@@ -167,6 +164,7 @@ subject {
     margin-left: 170px;
     z-index: 1000;
     border: 1px solid #000000;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     font-size: 0.8rem;
     color:#c5c5c5;
@@ -206,46 +204,43 @@ dotborder {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+}/*END*/
 
-/*END*/
-
-navtopright {
-    grid-area: navtopright;
+/*DATA-INPUT*/
+navtopleft {
+    position: absolute;
     font-size: 1rem;
-    padding-right: 15px;
+    top: -40px;
+    left: 0px;
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: left;
 }
-
-navleft {
-    grid-area: navleft;
-    font-size: 1rem;
-}
-
 data {
     width: 90%;
     height: 90%;
     grid-area: data;
+    position: relative;
     font-size: 1rem;
     border: 2px solid rgb(0, 0, 0);
     border-radius: 15px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
 }
-
-navright {
-    grid-area: navright;
+navtopright {
+    position: absolute;
+    font-size: 1rem;
+    top: -40px;
+    right: 0px;
     display: flex;
     align-items: center;
     justify-content: right;
-    padding-right: 15px;
-}
+}/*END*/
 
+/*HEADER*/
 rums {
     padding-left: 5px;
     padding-right: 25px;
@@ -264,10 +259,9 @@ help {
     align-items: center;
     justify-content: right;
     background-color: rgba(0, 0, 0, 0.5);
-}
+}/*END*/
 
 /*SWITCH*/
-
 schwitsch {
     display: inline-block;
     width: 30px;
@@ -325,18 +319,19 @@ schwitsch {
     -webkit-transform: translateX(13px);
     -ms-transform: translateX(13px);
     transform: translateX(13px);
-  }
-
-/*SWITCH-ENDE*/
+  }/*END*/
 
 copyright {
-    grid-area: copyright;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: auto;
+    height: auto;
     grid-template-columns: auto auto;
     font-size: 0.7rem;
     display: flex;
     align-items: center;
     justify-content: left;
-    padding-left: 15px;
 }
 
 copyright img {
@@ -353,12 +348,16 @@ copyright img {
   }
 
 license {
-    grid-area: license;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: auto;
+    height: auto;
+    grid-template-columns: auto auto auto auto;
     font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: right;
-    padding-right: 15px;
 }
 
 #map {
