@@ -1,3 +1,21 @@
+Responsive Design muss sitzen
+
+Header: Farbänderung
+Operator: Markierungkreis-Problem
+Input-Area: Göße und Icons
+Footer: Vertikal zentrieren
+
+
+footer {
+
+position:absolute
+bottom: 20px
+
+
+
+
+
+
 Fettes schwarz/weiß-Techunk
 globe (design?)
 epgs-eingabe
@@ -13,5 +31,5 @@ im dunkel-modus des tablets sieht die seite farblich ganz anders aus, der "Contr
 
 CHECK! back/next-buttons müssen an die ecken des "user-inputs" rutschen
 
-das logo reduzieren um eine ebene   
+CHECK! das logo reduzieren um eine ebene   
 

@@ -88,7 +88,7 @@ circlegear {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    grid-template-rows: 8% 12% 2% 60% 18%; 
+    grid-template-rows: 6% 12% 2% 60% 20%; 
     grid-template-columns: 7% 30% 26% 30% 7%; 
     grid-template-areas:  
     "header header logo help help" 
@@ -101,11 +101,12 @@ circlegear {
 header {
     grid-area: header;
     color: black;
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding-left: 15px;
     display: flex;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #c5c5c5
 }
 
 logo {
@@ -115,7 +116,7 @@ logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 /*CONTROLL-CENTER*/
@@ -253,12 +254,13 @@ donate {
 
 help {
     grid-area: help;
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding-right: 15px;
     display: flex;
     align-items: center;
     justify-content: right;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #c5c5c5;
 }/*END*/
 
 /*SWITCH*/
@@ -321,43 +323,43 @@ schwitsch {
     transform: translateX(13px);
   }/*END*/
 
-copyright {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    width: auto;
-    height: auto;
+
+footer {
+    position:absolute;
+    height:24px;
+    width:100vw;
+    bottom:30px;
+    display: grid;
     grid-template-columns: auto auto;
-    font-size: 0.7rem;
-    display: flex;
+    align-items: center;
+}
+
+copyright {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
     align-items: center;
     justify-content: left;
+    padding-left: 15px; 
 }
 
 copyright img {
     border-radius: 50%; /* Macht das Bild rund */
     border: 1px solid #000000; /* Fügt einen schwarzen Rand hinzu */
-    width: 2em; /* Größe des Bildes */
-    height: 2em; /* Stellt sicher, dass das Bild quadratisch bleibt */
+    width: 22px; /* Größe des Bildes */
+    height: 22px; /* Stellt sicher, dass das Bild quadratisch bleibt */
     object-fit: cover; /* Schneidet das Bild passend zu einem Kreis zu */
+    padding:0;
+    margin:0;
 }
 
-.element {
-    width: auto;
-    height: auto;
-  }
-
 license {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    width: auto;
-    height: auto;
+    position: relative;
+    display: grid;
     grid-template-columns: auto auto auto auto;
-    font-size: 1.5rem;
-    display: flex;
     align-items: center;
     justify-content: right;
+    padding-right:15px;
 }
 
 #map {
@@ -365,5 +367,5 @@ license {
     height: 100vh;
     position: absolute;
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0.75;
 }
