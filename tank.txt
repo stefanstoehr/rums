@@ -1,10 +1,10 @@
 Responsive Design muss sitzen
 
-
-Icons: +, -, vor und zurück
+Konsolidierung grid-template-areas
 Links einfügen (stefan, osm, leaflet, github, donate, youtube
 leaflet+ sichtbar
 map switcher
 HTML und CSS abschließend aufräumen
+Error page Design
 
 

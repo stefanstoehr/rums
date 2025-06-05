@@ -11,91 +11,22 @@ body {
     background-color:#000000;
 }
 
-deleteborehole {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    z-index: 1000;
-}
-
-newborehole {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    z-index: 1000;
-}
-
-circleplus {
-    width: 70px;
-    height: 70px;
-    background-color:#c5c5c5;
-    border-radius: 50%;
-    border: 1px solid rgb(0, 0, 0);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-createmodel {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 1rem;
-    z-index: 1000;
-}
-
-circlegear {
-    width: 100px;
-    height: 100px;
-    background-color:#c5c5c5;
-    border-radius: 50%;
-    border: 1px solid rgb(0, 0, 0);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .container { 
     height:100vh; 
     display: grid;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    grid-template-rows: 6% 12% 2% 60% 20%; 
+    grid-template-rows: 50px 12% 2% 60% 20%; 
     grid-template-columns: 7% 30% 26% 30% 7%; 
     grid-template-areas:  
     "header header logo help help" 
-    ". epsg numcircle subject ."
+    ". . numcircle . ."
     ". . . . ."
     ". data data data ." 
     ". . . . .";
 }
+
 /*BAR*/
 header {
     grid-area: header;
@@ -137,9 +68,9 @@ help {
     justify-content: right;
     background-color: rgba(0, 0, 0, 0.6);
     color: #c5c5c5;
-}/*END*/
+}/*END-BAR*/
 
-/*CONTROLL-CENTER*/
+/*CONTROLL-CENTER (CC)*/
 numcircle {
     grid-area: numcircle;
     position: relative;
@@ -225,7 +156,7 @@ dotborder {
     display: flex;
     align-items: center;
     justify-content: center;
-}/*END*/
+}/*END-CC*/
 
 /*DATA-INPUT*/
 data {
@@ -242,24 +173,86 @@ data {
     align-items: center;
     justify-content: center;
 }
-navtopleft {
+hole-back {
     position: absolute;
     font-size: 1rem;
-    top: -40px;
-    left: 0px;
+    width: 60px;
+    height: 60px;
+    background-color:#c5c5c5;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    top: 50%;
+    left:-30px;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
 }
-navtopright {
+hole-next {
     position: absolute;
     font-size: 1rem;
-    top: -40px;
-    right: 0px;
+    width: 60px;
+    height: 60px;
+    background-color:#c5c5c5;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    top: 50%;
+    right: -30px;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
-    justify-content: right;
-}/*END*/
+    justify-content: center;
+}
+hole-kill {
+    position: absolute;
+    font-size: 1rem;
+    width: 40px;
+    height: 40px;
+    background-color:#c5c5c5;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    bottom: -20px;
+    left: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+hole-make{
+    position: absolute;
+    font-size: 1rem;
+    width: 80px;
+    height: 80px;
+    background-color:#c5c5c5;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    top: -40px;
+    right: -40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*DATA-OUTPUT*/
+model-create {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background-color:#c5c5c5;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
 
 /*SWITCH*/
 schwitsch {
