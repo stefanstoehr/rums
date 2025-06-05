@@ -1,35 +1,10 @@
 Responsive Design muss sitzen
 
-Header: Farbänderung
-Operator: Markierungkreis-Problem
-Input-Area: Göße und Icons
-Footer: Vertikal zentrieren
 
+Icons: +, -, vor und zurück
+Links einfügen (stefan, osm, leaflet, github, donate, youtube
+leaflet+ sichtbar
+map switcher
+HTML und CSS abschließend aufräumen
 
-footer {
-
-position:absolute
-bottom: 20px
-
-
-
-
-
-
-Fettes schwarz/weiß-Techunk
-globe (design?)
-epgs-eingabe
-globe epsg-area "highlighted"
-koords-eingabe zoomt vom spherical globe zur cartesian map
-(OSM, SAT, SUCHE)
-
-pass auf: ...
-
-CHECK! bei mobilen endgeräten wird der footer oft überdeckt, verstehen aber absolute positionen (siehe Kreis-Buttons)
-
-im dunkel-modus des tablets sieht die seite farblich ganz anders aus, der "Controller-Dot" hat keinen umring
-
-CHECK! back/next-buttons müssen an die ecken des "user-inputs" rutschen
-
-CHECK! das logo reduzieren um eine ebene   
 
