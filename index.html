@@ -19,14 +19,16 @@
     <div class="container">
 
         <!--BAR-->
-        <header><img src="github.svg"><rums>Code</rums><img src="love.svg"><donate>Take</donate></header>
+        <git-don><img src="github.svg"><github>Code</github><img src="love.svg"><donate>Take</donate></git-don>
         <logo><img src="logo.svg" style="width:25px; height:auto; transform:rotate(180deg)"></logo>
-        <help>Help<img src="play.svg" style="padding-left:5px; padding-right:25px">Maps
-            <schwitsch><label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label></schwitsch>
-        </help>
+        <help-map>Help<img src="play.svg" style="padding-left:5px; padding-right:25px">Maps
+            <schwitsch>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </schwitsch>
+        </help-map>
           
         
         <!--CONTROLL-CENTER-->
@@ -34,7 +36,7 @@
             <input id="epsg-input" type="text" placeholder="EPSG">
             <img id="epsg-check" src="check.svg">
             <subject>of 1 hole</subject>
-            <dotholes><dotborder><dots></dots></dotborder></dotholes>
+            <dots></dots>
         </numcircle>
         
        
@@ -63,18 +65,17 @@
             </license>
         </footer>
 
-    </div>
-    
+    </div>   
     
     <script>
-        var map = L.map('map', {
-    zoomControl: false // Entfernt die Zoom-In und Zoom-Out Buttons
-}).setView([20, 0], 3);
-    
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
+        
+        var map = L.map('map', {zoomControl: false}).setView([20, 0], 3);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
     </script>
+    
 </body>
 </html>

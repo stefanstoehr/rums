@@ -1,6 +1,5 @@
 Responsive Design muss sitzen
 
-Konsolidierung grid-template-areas
 Links einfügen (stefan, osm, leaflet, github, donate, youtube
 leaflet+ sichtbar
 map switcher
