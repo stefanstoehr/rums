@@ -296,7 +296,7 @@ model-create {
 }
 
 /*DOWN-UNDER*/
-footer {
+/*footer {
     position:absolute;
     height:24px;
     width:100vw;
@@ -304,36 +304,58 @@ footer {
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
-}
+}*/
 
 copyright {
-    position: relative;
+    position: absolute;
+    height: 24px;
+    width: 78px;
+    left: 15px;
+    bottom: 30px;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     align-items: center;
     justify-content: left;
-    padding-left: 15px;
-    width: auto;
-    height: auto;
 }
 
-copyright img {
+#testo {
     border-radius: 50%; /* Macht das Bild rund */
     border: 1px solid #000000; /* Fügt einen schwarzen Rand hinzu */
     width: 22px; /* Größe des Bildes */
     height: 22px; /* Stellt sicher, dass das Bild quadratisch bleibt */
     object-fit: cover; /* Schneidet das Bild passend zu einem Kreis zu */
-    padding:0;
+    padding: 0;
     margin:0;
 }
 
+#osm {
+    border-radius: 50%; /* Macht das Bild rund */
+    border: 1px solid #000000; /* Fügt einen schwarzen Rand hinzu */
+    width: 22px; /* Größe des Bildes */
+    height: 22px; /* Stellt sicher, dass das Bild quadratisch bleibt */
+    object-fit: cover; /* Schneidet das Bild passend zu einem Kreis zu */
+    margin-left: 5px;
+}
+
+#leaflet {
+    border-radius: 50%; /* Macht das Bild rund */
+    border: 1px solid #000000; /* Fügt einen schwarzen Rand hinzu */
+    width: 22px; /* Größe des Bildes */
+    height: 22px; /* Stellt sicher, dass das Bild quadratisch bleibt */
+    object-fit: cover; /* Schneidet das Bild passend zu einem Kreis zu */
+    margin-left: 5px;
+}
+
 license {
-    position: relative;
+    position: absolute;
+    height: 24px;
+    width: 111px;
+    right: 15px;
+    bottom: 30px;
     display: grid;
     grid-template-columns: auto auto auto auto;
     align-items: center;
     justify-content: right;
-    padding-right:15px;
 }
 
 /*MAP*/
