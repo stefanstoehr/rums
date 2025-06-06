@@ -1,6 +1,6 @@
 Responsive Design muss sitzen
 
-Links einfügen (stefan, osm, leaflet, github, donate, youtube
+Links einfügen (stefan, leaflet/osm, cc, github, donate, youtube
 leaflet+ sichtbar
 map switcher
 HTML und CSS abschließend aufräumen

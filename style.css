@@ -121,7 +121,7 @@ schwitsch {
 }
   
 input:checked + .slider {
-    background-color: #63b85d;
+    background-color: #000000;
 }
   
 input:checked + .slider:before {
@@ -312,7 +312,9 @@ copyright {
     grid-template-columns: auto auto;
     align-items: center;
     justify-content: left;
-    padding-left: 15px; 
+    padding-left: 15px;
+    width: auto;
+    height: auto;
 }
 
 copyright img {
@@ -334,6 +336,7 @@ license {
     padding-right:15px;
 }
 
+/*MAP*/
 #map {
     width: 100vw;
     height: 100vh;
