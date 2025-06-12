@@ -1,0 +1,13 @@
+Zeitnah:
+EPSG-Funktionalität (Eingabe, EPSG-Code-Autovervollständigung, vorab Liste anlegen, grünes Icon, Map-Vorschau EPSG-Areale) 
+
+Future:
+Favicon
+GitHub-Seite vervollständigen
+Error Page Design
+FinTec
+Attribution für weitere Helper (ArcGIS, Three.js...)
+Responsive-Grid vs absolute-Position validieren (Abstandsunterschiede Rand unten elemenieren)
+Logo optimieren
+
+

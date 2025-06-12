@@ -1,8 +1,0 @@
-Responsive Design muss sitzen
-
-Links einfügen (github, donate, youtube)!
-map switcher
-HTML und CSS abschließend aufräumen
-Error page Design
-
-

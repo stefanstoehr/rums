@@ -19,9 +19,23 @@
     <div class="container">
 
         <!--BAR-->
-        <git-don><img src="github.svg"><github>Code</github><img src="love.svg"><donate>Take</donate></git-don>
-        <logo><img src="logo.svg" style="width:25px; height:auto; transform:rotate(180deg)"></logo>
-        <help-map>Help<img src="play.svg" style="padding-left:5px; padding-right:25px">Maps
+        <git-don>
+            <a href="https://github.com/stefanstoehr/rums" target="_blank" style="text-decoration:none;display:flex;align-items:center;">
+                <img src="./icon/github.svg">
+                <github style="color:#c5c5c5;">Code</github>
+            </a>
+            <a href="https://github.com/stefanstoehr/rums/blob/main/README.md" target="_blank" style="text-decoration:none;display:flex;align-items:center;">
+                <img src="./icon/love.svg">
+                <donate style="color:#c5c5c5;">Take</donate>
+            </a>
+        </git-don>
+        <logo></logo>
+        <help-map>
+            <a href="https://www.youtube.com/@ensnull" target="_blank" style="text-decoration:none;display:flex;align-items:center;color:#c5c5c5;">
+            Help
+            <img src="./icon/play.svg" style="padding-left:5px; padding-right:25px">
+            </a>
+            Maps
             <schwitsch>
                 <label class="switch">
                     <input type="checkbox">
@@ -34,7 +48,7 @@
         <!--CONTROLL-CENTER-->
         <numcircle>1
             <input id="epsg-input" type="text" placeholder="EPSG">
-            <img id="epsg-check" src="check.svg">
+            <img id="epsg-check" src="./icon/check.svg">
             <subject>of 1 hole</subject>
             <dots></dots>
         </numcircle>
@@ -42,38 +56,36 @@
        
         <!--DATA-INPUT-->   
         <data>
-            <hole-back><img src="back.svg" style="width:30px; height:30px;"></hole-back>
-            <hole-next><img src="next.svg" style="width:30px; height:30px;"></hole-next>
-            <hole-kill><img src="kill.svg" style="width:20px; height:20px;"></hole-kill>
-            <hole-make><img src="make.svg" style="width:40px; height:40px;"></hole-make>
+            <hole-back><img src="./icon/back.svg" style="width:22px; height:22px;"></hole-back>
+            <hole-next><img src="./icon/next.svg" style="width:22px; height:22px;"></hole-next>
+            <hole-kill><img src="./icon/kill.svg" style="width:22px; height:22px;"></hole-kill>
+            <hole-make><img src="./icon/make.svg" style="width:30px; height:30px;"></hole-make>
+            <make-rums><img src="./icon/logo.svg" style="width:30px; height:30px; transform:rotate(180deg)"></make-rums>
+            <scale></scale>
+            <north>north<img src="./icon/north.svg" style="width:16px; height:16px;"></north>
         </data>
-        
-        <!--DATA-OUTPUT-->
-        <model-create><img src="create.svg" style="width: 50px; height: auto"></model-create>
 
         <!--DOWN-UNDER-->
-        
-            <!--<a href="https://github.com/stefanstoehr" target="_blank" style="text-decoration: none; color:black"></a>-->
-            <copyright>
-                <a href="https://github.com/stefanstoehr" target="_blank" style="text-decoration: none; color:black">
-                <img id="testo" src="testo.png" style="height:22px;width:22px;">
-                </a>
-                <a href="https://www.openstreetmap.de" target="_blank" style="text-decoration: none; color:black">
-                <img id="osm" src="osm210.png" style="height:22px;width:22px;">
-                </a>
-                <a href="https://leafletjs.com" target="_blank" style="text-decoration: none; color:black">
-                <img id="leaflet" src="leaflet255.png" style="height:22px;width:22px;">
-                </a>
-            </copyright>
+        <copyright>
+            <a href="https://github.com/stefanstoehr" target="_blank" style="text-decoration:none;display:flex;align-items:center;">
+                <img id="testo" src="./icon/testo.png" style="height:22px;width:22px;">
+            </a>
+            <a href="https://www.openstreetmap.de" target="_blank" style="text-decoration: none;display:flex;align-items:center;">
+                <img id="osm" src="./icon/osm.png" style="height:22px;width:22px;">
+            </a>
+            <a href="https://leafletjs.com" target="_blank" style="text-decoration: none;display:flex;align-items:center;">
+                <img id="leaflet" src="./icon/leaflet.png" style="height:22px;width:22px;">
+            </a>
+        </copyright>
            
-            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="text-decoration: none; color:black">
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="text-decoration: none;display:flex;align-items:center;">
             <license>
                 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 24px; width: 24px; padding-right:5px">
                 <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 24px; width: 24px; padding-right:5px">
                 <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 24px; width: 24px; padding-right:5px">
                 <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="height: 24px; width: 24px;">           
             </license>
-            </a>     
+        </a>     
 
     </div>   
     
@@ -96,6 +108,14 @@
             maxZoom: 19,
             attribution: '&copy; <a href="https://www.esri.com/">Esri</a>'
         });
+
+
+        // Scale Control
+        const scaleControl = L.control.scale({ maxWidth: 150, imperial: false }).addTo(map);
+
+        // Verschiebe den Scale Control in das <scale>-Element
+        const scaleElement = document.querySelector('scale');
+        scaleElement.appendChild(scaleControl._container);
 
         // Switch-Logik
         const switchElement = document.querySelector('.switch input');

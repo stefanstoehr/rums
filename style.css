@@ -17,12 +17,12 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    grid-template-rows: 50px 12% 2% 60% 20%; 
+    grid-template-rows: 50px 12% 2% 65% 15%; 
     grid-template-columns: 7% 30% 26% 30% 7%; 
     grid-template-areas:  
     "git-don git-don logo help-map help-map" 
     ". . numcircle . ."
-    ". . . . ."
+    ". . numcircle . ."
     ". data data data ." 
     ". . . . .";
 }
@@ -217,14 +217,14 @@ data {
 hole-back {
     position: absolute;
     font-size: 1rem;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     background-color:#c5c5c5;
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     top: 50%;
-    left:-30px;
+    left:-16px;
     transform: translateY(-50%);
     display: flex;
     align-items: center;
@@ -233,14 +233,14 @@ hole-back {
 hole-next {
     position: absolute;
     font-size: 1rem;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     background-color:#c5c5c5;
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     top: 50%;
-    right: -30px;
+    right: -16px;
     transform: translateY(-50%);
     display: flex;
     align-items: center;
@@ -249,14 +249,14 @@ hole-next {
 hole-kill {
     position: absolute;
     font-size: 1rem;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color:#c5c5c5;
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    bottom: -20px;
-    left: -20px;
+    top: -16px;
+    left: -16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,47 +264,61 @@ hole-kill {
 hole-make{
     position: absolute;
     font-size: 1rem;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background-color:#c5c5c5;
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    top: -40px;
-    right: -40px;
+    bottom: -31px;
+    right: -31px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/*DATA-OUTPUT*/
-model-create {
+make-rums {
     position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     background-color:#c5c5c5;
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    bottom: -31px;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+}
+
+scale {
+    position: absolute;
+    font-size: 0.5rem;
+    width: auto;
+    height: 20px;
+    bottom: -25px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+north {
+    position: absolute;
+    font-size: 0.5rem;
+    width: auto;
+    height: 18px;
+    padding-left: 5px;
+    top: -25px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
 }
 
 /*DOWN-UNDER*/
-/*footer {
-    position:absolute;
-    height:24px;
-    width:100vw;
-    bottom:30px;
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-}*/
 
 copyright {
     position: absolute;
