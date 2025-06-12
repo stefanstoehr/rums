@@ -51,8 +51,8 @@ donate {
 
 logo {
     grid-area: logo;
-    color: black;
-    font-size: 1rem;
+    color: #c5c5c5;
+    font-size: 0.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
