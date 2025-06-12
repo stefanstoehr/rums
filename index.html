@@ -131,6 +131,25 @@
             }
         });
 
+        //Logo
+        const logoElement = document.querySelector('logo');
+        const originalText = "Rapid Underground Model Simulation"; // Originaltext
+        const abbreviation = "RUMS"; // Abkürzung
+
+        function updateLogoText() {
+            if (window.innerWidth < 890) { // Wenn der Viewport kleiner als 600px ist
+                logoElement.textContent = abbreviation;
+            } else {
+                logoElement.textContent = originalText;
+            }
+        }
+
+        // Event Listener für Änderungen der Fenstergröße
+        window.addEventListener('resize', updateLogoText);
+
+        // Initiale Prüfung beim Laden der Seite
+        updateLogoText();
+
     </script>
     
 </body>
