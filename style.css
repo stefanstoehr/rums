@@ -267,14 +267,14 @@ hole-kill {
 hole-make{
     position: absolute;
     font-size: 1rem;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     background-color:#c5c5c5;
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    bottom: -31px;
-    right: -31px;
+    top: -16px;
+    right: -16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -298,7 +298,7 @@ scale {
     position: absolute;
     font-size: 0.5rem;
     width: auto;
-    height: 20px;
+    height: 18px;
     bottom: -25px;
     left: 0px;
     display: flex;
@@ -312,7 +312,7 @@ north {
     width: auto;
     height: 18px;
     padding-left: 5px;
-    top: -25px;
+    bottom: -25px;
     right: 0px;
     display: flex;
     align-items: center;

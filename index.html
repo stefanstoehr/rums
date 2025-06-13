@@ -29,7 +29,10 @@
                 <donate style="color:#c5c5c5;">Take</donate>
             </a>
         </git-don>
-        <logo>Rapid Underground Model Simulation</logo>
+        <logo>
+            <img src="./icon/rumsw.svg" style="width:16px;height:16px;padding-right:5px;">
+            <span>Rapid Underground Model Simulation</span>
+        </logo>
         <help-map>
             <a href="https://www.youtube.com/@ensnull" target="_blank" style="text-decoration:none;display:flex;align-items:center;color:#c5c5c5;">
             Help
@@ -59,7 +62,7 @@
             <hole-back><img src="./icon/back.svg" style="width:22px; height:22px;"></hole-back>
             <hole-next><img src="./icon/next.svg" style="width:22px; height:22px;"></hole-next>
             <hole-kill><img src="./icon/kill.svg" style="width:22px; height:22px;"></hole-kill>
-            <hole-make><img src="./icon/make.svg" style="width:30px; height:30px;"></hole-make>
+            <hole-make><img src="./icon/make.svg" style="width:22px; height:22px;"></hole-make>
             <make-rums><img src="./icon/logo.svg" style="width:30px; height:30px; transform:rotate(180deg)"></make-rums>
             <scale></scale>
             <north>north<img src="./icon/north.svg" style="width:16px; height:16px;"></north>
@@ -131,21 +134,32 @@
             }
         });
 
-        //Logo
+        // Wähle das logo-Element aus
         const logoElement = document.querySelector('logo');
         const originalText = "Rapid Underground Model Simulation";
         const abbreviation = "RUMS";
 
+        // Funktion zum Aktualisieren des Textes
         function updateLogoText() {
-            if (window.innerWidth < 890) {
-                logoElement.textContent = abbreviation;
+            const textNode = logoElement.querySelector('span'); // Wähle den Text innerhalb des logo-Elements
+            if (window.innerWidth < 970) {
+                textNode.textContent = abbreviation; // Ändere den Text zu "RUMS"
             } else {
-                logoElement.textContent = originalText;
+                textNode.textContent = originalText; // Ändere den Text zurück zum Original
             }
         }
 
+        // Initialisiere den Text
+        if (!logoElement.querySelector('span')) {
+            const textNode = document.createElement('span');
+            textNode.textContent = originalText;
+            logoElement.appendChild(textNode);
+        }
+
+        // Event Listener für Änderungen der Fenstergröße
         window.addEventListener('resize', updateLogoText);
 
+        // Initiale Prüfung beim Laden der Seite
         updateLogoText();
 
     </script>
