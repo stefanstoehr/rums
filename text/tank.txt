@@ -1,4 +1,7 @@
 Zeitnah:
+"Board" optimieren 
+
+Ab 16.6.
 EPSG-Funktionalität (Eingabe, EPSG-Code-Autovervollständigung, vorab Liste anlegen, grünes Icon, Map-Vorschau EPSG-Areale) 
 
 Future:
@@ -9,5 +12,9 @@ FinTec
 Attribution für weitere Helper (ArcGIS, Three.js...)
 Responsive-Grid vs absolute-Position validieren (Abstandsunterschiede Rand unten elemenieren)
 Logo optimieren
+Globe bei Startansicht
+Foto vom Berg (Film 2Guns)
+Three.js Newsletter (?) mit Info zur Felswand
+KI-Plan
 
 

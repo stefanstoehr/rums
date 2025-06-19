@@ -12,7 +12,8 @@ body {
 }
 
 .container { 
-    height:100vh; 
+    height:100vh;
+    width:100vw;
     display: grid;
     margin: 0;
     padding: 0;
@@ -21,7 +22,7 @@ body {
     grid-template-columns: 7% 30% 26% 30% 7%; 
     grid-template-areas:  
     "git-don git-don logo help-map help-map" 
-    ". . numcircle . ."
+    ". control control control ."
     ". data data data ." 
     ". . . . .";
 }
@@ -128,74 +129,20 @@ input:checked + .slider:before {
     -ms-transform: translateX(13px);
     transform: translateX(13px);
 }
-
-/*CONTROLL-CENTER (CC)*/
-numcircle {
-    grid-area: numcircle;
-    position: relative;
-    width: 60px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    background-color:#c5c5c5;
-    border-radius: 50%;
+/*CONTROLLER*/
+control {
+    grid-area: control;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #c5c5c5;
+    font-size: 0.8rem;
+    width: 150px;
+    height: 30px;
     border: 1px solid rgb(0, 0, 0);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 15px;
     margin: auto;
-    font-size: 1.5rem;
-}
-
-#epsg-input {
-    position: absolute;
-    width: 80px;
-    height: 20px;
-    background-color:#c5c5c5;
-    margin-right: 170px;
-    z-index: 1000;
-    border: 1px solid #000000;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    font-size: 0.8rem;
-}
-
-#epsg-check {
-    position: absolute;
-    margin-right: 110px;
-    z-index: 1000;
-}
-
-subject {
-    position: absolute;
-    width: 80px;
-    height: 20px;
-    background-color:#000000;
-    margin-left: 170px;
-    z-index: 1000;
-    border: 1px solid #000000;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    font-size: 0.8rem;
-    color:#c5c5c5;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-dots {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    aspect-ratio: 1 / 1;
-    margin-top: 90px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-    border: 2px solid #63b85d;
-    border-radius: 50%;
 }
 
 /*DATA-INPUT*/
@@ -203,11 +150,11 @@ data {
     width: 86%;
     height: auto;
     grid-area: data;
-    position: absolute; /* Positioniert das Element relativ zum Viewport */
+    position: absolute;
     top: 23vh;
-    bottom: 100px; /* Mindestabstand von 60px zum unteren Viewportrand */
-    left: 50%; /* Zentriert das Element horizontal */
-    transform: translateX(-50%); /* Korrigiert die horizontale Zentrierung */
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 1rem;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 15px;
@@ -215,6 +162,56 @@ data {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+epsg-vote {
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c5c5c5;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+globe-area {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #878787;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 15px 0 0 15px;
+    left: -1px;
+}
+
+#epsg-input {
+    position: absolute;
+    width: 98px;
+    height: 18px;
+    color:#000000;
+    background-color: #c5c5c5;
+    margin-left: 40px;
+    border-radius: 0 10px 10px 0;
+    font-size: 0.8rem;
+    padding:3px;
+    border: 0px;
+}
+
+#epsg-check {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    right: 5px;
 }
 
 hole-back {
@@ -336,30 +333,30 @@ copyright {
 }
 
 #testo {
-    border-radius: 50%; /* Macht das Bild rund */
-    border: 1px solid #000000; /* Fügt einen schwarzen Rand hinzu */
-    width: 22px; /* Größe des Bildes */
-    height: 22px; /* Stellt sicher, dass das Bild quadratisch bleibt */
-    object-fit: cover; /* Schneidet das Bild passend zu einem Kreis zu */
+    border-radius: 50%;
+    border: 1px solid #000000;
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
     padding: 0;
     margin:0;
 }
 
 #osm {
-    border-radius: 50%; /* Macht das Bild rund */
-    border: 1px solid #000000; /* Fügt einen schwarzen Rand hinzu */
-    width: 22px; /* Größe des Bildes */
-    height: 22px; /* Stellt sicher, dass das Bild quadratisch bleibt */
-    object-fit: cover; /* Schneidet das Bild passend zu einem Kreis zu */
+    border-radius: 50%;
+    border: 1px solid #000000;
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
     margin-left: 5px;
 }
 
 #leaflet {
-    border-radius: 50%; /* Macht das Bild rund */
-    border: 1px solid #000000; /* Fügt einen schwarzen Rand hinzu */
-    width: 22px; /* Größe des Bildes */
-    height: 22px; /* Stellt sicher, dass das Bild quadratisch bleibt */
-    object-fit: cover; /* Schneidet das Bild passend zu einem Kreis zu */
+    border-radius: 50%;
+    border: 1px solid #000000;
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
     margin-left: 5px;
 }
 
