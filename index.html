@@ -10,6 +10,7 @@
      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
+    <div id="thor" style="z-index: 10000 ;position:absolute; left:100px; top:100px; height: 5px; width: 5px; background-color: blueviolet;"></div>
     <div id="map"></div>
     
     <div class="container">
@@ -59,6 +60,12 @@
             <make-rums><img src="./icon/logo.svg" style="width:30px; height:30px; transform:rotate(180deg)"></make-rums>
             <scale></scale>
             <north>north<img src="./icon/north.svg" style="width:16px; height:16px;"></north>
+            <cyan>
+                <x-lat>latitude:<input id="x-in" type="text" placeholder="x is latitude"></x-lat>
+                <y-lon>longitude:<input id="y-in" type="text" placeholder="y is longitude"></y-lon>
+                <z-hei>height:<input id="z-in" type="text" placeholder="z is height"></z-hei>
+            </cyan>
+            <magenta><location-point id="loki"></location-point></magenta>
         </data>
 
         <!--DOWN-UNDER-->
@@ -105,6 +112,9 @@
             attribution: '&copy; <a href="https://www.esri.com/">Esri</a>'
         });
 
+        // Marker-Situation
+        var marker = L.marker([51.5, -0.09]).addTo(map);
+        marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
 
         // Scale Control
         const scaleControl = L.control.scale({ maxWidth: 150, imperial: false }).addTo(map);
@@ -155,6 +165,78 @@
         // Initiale Prüfung beim Laden der Seite
         updateLogoText();
 
+        // Coords of Centerpoint
+        /*var lat, lng;*/
+        //var centerpoint = document.getElementById("centerpoint");
+        /*centerpoint.x = L.latLng.lat;
+        centerpoint.y = L.latLng.lng;*/
+        console.log(map.getPixelOrigin());
+
+        //var loki = document.getElementById("loki");
+        //var rect = loki.getBoundingClientRect();
+        //console.log(rect.top, rect.right, rect.bottom, rect.left);
+        // Wähle das Element mit der ID "loki"
+        
+        
+        var loki = document.getElementById("loki");
+
+        // Berechne die Position des Elements relativ zum Kartencontainer
+        var rect = loki.getBoundingClientRect();
+        var mapRect = document.getElementById("map").getBoundingClientRect();
+
+        // Berechne die Pixelkoordinaten relativ zum Kartencontainer
+        var containerPoint = {
+            x: rect.left - mapRect.left + rect.width / 2, // X-Koordinate (Mitte des Elements)
+            y: rect.top - mapRect.top + rect.height / 2  // Y-Koordinate (Mitte des Elements)
+        };
+
+        // Wandle die Pixelkoordinaten in geografische Koordinaten um
+        var latLng = map.containerPointToLatLng(containerPoint);
+
+        // Ausgabe der Kartenkoordinaten
+        console.log("Latitude:", latLng.lat, "Longitude:", latLng.lng);
+
+        // Füge einen Marker an der berechneten Position hinzu
+        var lokiMarker = L.marker(latLng).addTo(map);
+        lokiMarker.bindPopup("Loki's Position").openPopup();
+
+        // Setze die Karte auf die berechnete Position
+        //map.setView(latLng, 10);
+
+        // Übergabe der Koordinaten an die Eingabefelder
+        document.getElementById("x-in").value = latLng.lat.toFixed(6);
+        document.getElementById("y-in").value = latLng.lng.toFixed(6);
+        //document.getElementById("z-in").value = "0"; // Höhe auf 0 setzen, da keine Höheninformation vorhanden ist
+        
+        // Funktion zur Abfrage der Höhe
+        async function getElevation(lat, lng) {
+            const url = `https://api.open-elevation.com/api/v1/lookup?locations=${lat},${lng}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.results && data.results.length > 0) {
+                    return data.results[0].elevation; // Rückgabe der Höhe
+                } else {
+                    console.error("Keine Höheninformationen gefunden.");
+                    return null;
+                }
+            } catch (error) {
+                console.error("Fehler bei der Höhenabfrage:", error);
+                return null;
+            }
+        }
+        
+        // Berechne die Höhe an der Position von "loki"
+        (async () => {
+            const elevation = await getElevation(latLng.lat, latLng.lng);
+            if (elevation !== null) {
+                console.log("Höhe:", elevation, "Meter");
+        
+                // Übergabe der Höhe an das Eingabefeld
+                document.getElementById("z-in").value = elevation.toFixed(2); // Höhe mit 2 Dezimalstellen
+            }
+        })();
+        
     </script>
     
 </body>

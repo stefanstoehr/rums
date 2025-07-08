@@ -1,20 +1,66 @@
-Zeitnah:
-"Board" optimieren 
+Beliebige Position-x und beliebige Position-y auf'm Screen
+Umrechnen der Screenkoordinaten in Mapkoordinaten des sichtbaren Kartenausschnittes
 
-Ab 16.6.
-EPSG-Funktionalität (Eingabe, EPSG-Code-Autovervollständigung, vorab Liste anlegen, grünes Icon, Map-Vorschau EPSG-Areale) 
+
+
+
+
+WORKFLOW:
+
+Gib Koordinaten direkt ein, wenn sie im OSM-CRS sind (EPSG:3857 = voreingestellt).
+
+Oder wähle dein CRS aus.
+
+Oder schieb die Karte auf den Ort den Bohrrung (dann wird das OSM-CRS genutzt). 
+
+"Change EPSG")
+ 
+Warum nicht auch unterschiedliche EPSG- & Co.-Eingaben im Projekt ermöglichen. 
+
+o CRS OR o MAP? o EPSG:3857 OR o OTHER
+
+Du kannst Koordinaten eingeben!
+Prüfen nach EPSG:3857
+
+Wenn du noch kein CODE eingegeben hast, dann erfolgt die Meldung "CRS-CODE" wählen bzw. mit Vermutung OSM 
+
+WITH CRS (OTHER):
+
+(EPSG+ESRI) Code-Eingabe (Hinweis: OSM-Koordinaten können direkt eingegeben werden)
+
+Suche Code und Parameter z.B. durch API-Abfrage bei epsg.io (Empfehlung von ChagtGPT)
+
+Zutreffenden Parameter speichern!
+
+Dann die Koordinaten eingeben und:
+
+Über PROJ4.js API Koordinatentransformation nach OSM (=WGS84/EPSG:3857) und Zeigen auf Map
+
+Koordinaten speichern...
+
+
+WITH MAP:
+
+
+
+Zeitnah:
+"Board" optimieren = done am 19.6.25
+
+Ab: 19.6.25 - 16:10 Uhr
+EPSG-Funktionalität (Eingabe, EPSG-Code-Autovervollständigung, vorab Liste anlegen, Map-Vorschau EPSG-Areale, Anbindung von PROJ-API
+
+grünes Icon - done
+List mit EPSG-Codes
 
 Future:
 Favicon
 GitHub-Seite vervollständigen
 Error Page Design
-FinTec
+FinTec (Tagesgeldkonto)
 Attribution für weitere Helper (ArcGIS, Three.js...)
-Responsive-Grid vs absolute-Position validieren (Abstandsunterschiede Rand unten elemenieren)
+relative- vs absolute-Position validieren
 Logo optimieren
 Globe bei Startansicht
-Foto vom Berg (Film 2Guns)
-Three.js Newsletter (?) mit Info zur Felswand
-KI-Plan
+Sprache der Karten
 
 

@@ -36,7 +36,8 @@ git-don {
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.6);
-    color: #c5c5c5
+    color: #c5c5c5;
+    z-index: 1000;
 }
 
 github {
@@ -57,6 +58,7 @@ logo {
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
 }
 
 help-map {
@@ -68,6 +70,7 @@ help-map {
     justify-content: right;
     background-color: rgba(0, 0, 0, 0.6);
     color: #c5c5c5;
+    z-index: 1000;
 }
 
 /*SWITCH*/
@@ -143,6 +146,7 @@ control {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
 }
 
 /*DATA-INPUT*/
@@ -159,9 +163,42 @@ data {
     border: 1px solid rgb(0, 0, 0);
     border-radius: 15px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+    background-color: hidden;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+cyan {
+    position: absolute;
+    background-color: rgba(255, 255, 0, 0.5);
+    width: 50%;
+    height: 100%;
+    left:0;
+    display: grid;
+    align-items: center;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+}
+
+magenta {
+    position: absolute;
+    background-color: rgba(255, 0, 255, 0.5);
+    width: 50%;
+    height: 100%;
+    right:0;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+location-point {
+    width: 1px;
+    height: 1px;
+    background-color: #000000;
 }
 
 epsg-vote {
@@ -286,6 +323,8 @@ make-rums {
     border: 1px solid rgb(0, 0, 0);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     bottom: -31px;
+    left: 50%;
+    transform: translatex(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -330,6 +369,7 @@ copyright {
     grid-template-columns: auto auto auto;
     align-items: center;
     justify-content: left;
+    z-index: 1000;
 }
 
 #testo {
@@ -370,6 +410,7 @@ license {
     grid-template-columns: auto auto auto auto;
     align-items: center;
     justify-content: right;
+    z-index: 1000;
 }
 
 /*MAP*/
@@ -377,6 +418,5 @@ license {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    z-index: -1;
-    filter: blur(4px);
+    /*filter: blur(4px);*/
 }
