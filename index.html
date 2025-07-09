@@ -60,12 +60,12 @@
             <make-rums><img src="./icon/logo.svg" style="width:30px; height:30px; transform:rotate(180deg)"></make-rums>
             <scale></scale>
             <north>north<img src="./icon/north.svg" style="width:16px; height:16px;"></north>
-            <cyan>
-                <x-lat>latitude:<input id="x-in" type="text" placeholder="x is latitude"></x-lat>
-                <y-lon>longitude:<input id="y-in" type="text" placeholder="y is longitude"></y-lon>
-                <z-hei>height:<input id="z-in" type="text" placeholder="z is height"></z-hei>
-            </cyan>
-            <magenta><location-point id="loki"></location-point></magenta>
+            <yellow>
+                <x-lat>latitude (x):<br><input id="x-in" type="text" placeholder="x is latitude" style="margin:0;padding:0"></x-lat>
+                <y-lon>longitude (y):<br><input id="y-in" type="text" placeholder="y is longitude" style="margin:0;padding:0"></y-lon>
+                <z-hei>height (z):<br><input id="z-in" type="text" placeholder="z is height" style="margin:0;padding:0"></z-hei>
+            </yellow>
+            <magenta><location-point id="loki"></location-point><magentaline></magentaline></magenta>
         </data>
 
         <!--DOWN-UNDER-->
@@ -111,10 +111,6 @@
             maxZoom: 19,
             attribution: '&copy; <a href="https://www.esri.com/">Esri</a>'
         });
-
-        // Marker-Situation
-        var marker = L.marker([51.5, -0.09]).addTo(map);
-        marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
 
         // Scale Control
         const scaleControl = L.control.scale({ maxWidth: 150, imperial: false }).addTo(map);
@@ -165,18 +161,7 @@
         // Initiale Prüfung beim Laden der Seite
         updateLogoText();
 
-        // Coords of Centerpoint
-        /*var lat, lng;*/
-        //var centerpoint = document.getElementById("centerpoint");
-        /*centerpoint.x = L.latLng.lat;
-        centerpoint.y = L.latLng.lng;*/
-        console.log(map.getPixelOrigin());
-
-        //var loki = document.getElementById("loki");
-        //var rect = loki.getBoundingClientRect();
-        //console.log(rect.top, rect.right, rect.bottom, rect.left);
-        // Wähle das Element mit der ID "loki"
-        
+        // Marker für "loki" erstellen
         
         var loki = document.getElementById("loki");
 
@@ -198,10 +183,7 @@
 
         // Füge einen Marker an der berechneten Position hinzu
         var lokiMarker = L.marker(latLng).addTo(map);
-        lokiMarker.bindPopup("Loki's Position").openPopup();
-
-        // Setze die Karte auf die berechnete Position
-        //map.setView(latLng, 10);
+        lokiMarker.bindPopup("Borehole #1").openPopup();
 
         // Übergabe der Koordinaten an die Eingabefelder
         document.getElementById("x-in").value = latLng.lat.toFixed(6);
@@ -237,6 +219,40 @@
             }
         })();
         
+        // Funktion zur Aktualisierung des Markers basierend auf der Position von "loki"
+        function updateLokiMarker() {
+            // Berechne die Position des Elements relativ zum Kartencontainer
+            var rect = loki.getBoundingClientRect();
+            var mapRect = document.getElementById("map").getBoundingClientRect();
+        
+            // Berechne die Pixelkoordinaten relativ zum Kartencontainer
+            var containerPoint = {
+                x: rect.left - mapRect.left + rect.width / 2, // X-Koordinate (Mitte des Elements)
+                y: rect.top - mapRect.top + rect.height / 2  // Y-Koordinate (Mitte des Elements)
+            };
+        
+            // Wandle die Pixelkoordinaten in geografische Koordinaten um
+            var latLng = map.containerPointToLatLng(containerPoint);
+        
+            // Aktualisiere die Position des Markers
+            lokiMarker.setLatLng(latLng);
+        
+            // Optional: Aktualisiere die Eingabefelder
+            document.getElementById("x-in").value = latLng.lat.toFixed(6);
+            document.getElementById("y-in").value = latLng.lng.toFixed(6);
+        }
+        
+        // Initialer Marker an der Position von "loki"
+        var lokiMarker = L.marker(latLng).addTo(map);
+        lokiMarker.bindPopup("Borehole #1").openPopup();
+        
+        // Event Listener für Layoutänderungen oder Fenstergrößenänderungen
+        window.addEventListener('resize', updateLokiMarker);
+        window.addEventListener('scroll', updateLokiMarker);
+        
+        // Initiale Aktualisierung des Markers
+        updateLokiMarker();
+
     </script>
     
 </body>
