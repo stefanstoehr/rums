@@ -161,7 +161,8 @@
         // Initiale Prüfung beim Laden der Seite
         updateLogoText();
 
-        // Marker für "loki" erstellen
+        
+        // MARKER UND COORDINATEN
         
         var loki = document.getElementById("loki");
 
@@ -182,8 +183,8 @@
         console.log("Latitude:", latLng.lat, "Longitude:", latLng.lng);
 
         // Füge einen Marker an der berechneten Position hinzu
-        var lokiMarker = L.marker(latLng).addTo(map);
-        lokiMarker.bindPopup("Borehole #1").openPopup();
+        var lokiMarker = L.marker();
+        //lokiMarker.bindPopup("Borehole #1").openPopup();
 
         // Übergabe der Koordinaten an die Eingabefelder
         document.getElementById("x-in").value = latLng.lat.toFixed(6);
@@ -222,20 +223,34 @@
         // Funktion zur Aktualisierung des Markers basierend auf der Position von "loki"
         function updateLokiMarker() {
             // Berechne die Position des Elements relativ zum Kartencontainer
-            var rect = loki.getBoundingClientRect();
-            var mapRect = document.getElementById("map").getBoundingClientRect();
+            rect = loki.getBoundingClientRect();
+            mapRect = document.getElementById("map").getBoundingClientRect();
         
             // Berechne die Pixelkoordinaten relativ zum Kartencontainer
-            var containerPoint = {
+            containerPoint = {
                 x: rect.left - mapRect.left + rect.width / 2, // X-Koordinate (Mitte des Elements)
                 y: rect.top - mapRect.top + rect.height / 2  // Y-Koordinate (Mitte des Elements)
             };
         
             // Wandle die Pixelkoordinaten in geografische Koordinaten um
-            var latLng = map.containerPointToLatLng(containerPoint);
+            latLng = map.containerPointToLatLng(containerPoint);
         
             // Aktualisiere die Position des Markers
-            lokiMarker.setLatLng(latLng);
+            if (lokiMarker) {
+                map.removeLayer(lokiMarker); // Entferne den alten Marker
+                console.log("Marker removed from map");
+                console.log("Aktualisiere Marker-Position:", latLng.lat, latLng.lng);
+                lokiMarker = L.marker(latLng).addTo(map); // Füge den neuen Marker hinzu
+                lokiMarker.bindPopup("Borehole #1").openPopup(); // Aktualisiere den Popup-Inhalt
+            };
+
+            // Update Height
+            getElevation(latLng.lat, latLng.lng).then(elevation => {
+                if (elevation !== null) {
+                    console.log("Aktualisierte Höhe:", elevation, "Meter");
+                    document.getElementById("z-in").value = elevation.toFixed(2); // Höhe mit 2 Dezimalstellen
+                }
+            });
         
             // Optional: Aktualisiere die Eingabefelder
             document.getElementById("x-in").value = latLng.lat.toFixed(6);
@@ -243,8 +258,8 @@
         }
         
         // Initialer Marker an der Position von "loki"
-        var lokiMarker = L.marker(latLng).addTo(map);
-        lokiMarker.bindPopup("Borehole #1").openPopup();
+        //var lokiMarker = L.marker(latLng).addTo(map);
+        //lokiMarker.bindPopup("Borehole #1").openPopup();
         
         // Event Listener für Layoutänderungen oder Fenstergrößenänderungen
         window.addEventListener('resize', updateLokiMarker);
