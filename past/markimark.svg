@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   sodipodi:docname="markimark.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showguides="true"
+     inkscape:zoom="0.35367193"
+     inkscape:cx="212.06094"
+     inkscape:cy="575.39201"
+     inkscape:window-width="1280"
+     inkscape:window-height="746"
+     inkscape:window-x="3"
+     inkscape:window-y="26"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path1"
+       style="fill:#ff00ff;stroke-width:0.25034"
+       d="m 180,124.37486 c 0,41.42135 -75,144.32082 -75,144.32082 0,0 -75.000001,-102.89947 -75.000002,-144.32082 C 29.999997,82.953499 63.578641,49.374855 105,49.374855 c 41.42136,0 75,33.578644 75,75.000005 z"
+       sodipodi:nodetypes="scsss" />
+    <path
+       id="rect2"
+       style="fill:#c5c5c5;stroke-width:0.32635"
+       d="M -151.78924,80.232938 H -1.7892376 L -76.789238,230.23293 Z"
+       sodipodi:nodetypes="cccc" />
+    <circle
+       style="fill:#800080;stroke-width:0.264583"
+       id="path2"
+       cx="105"
+       cy="122.68903"
+       r="30" />
+  </g>
+</svg>

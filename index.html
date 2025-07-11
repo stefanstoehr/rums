@@ -65,7 +65,7 @@
                 <y-lon>longitude (y):<br><input id="y-in" type="text" placeholder="y is longitude" style="margin:0;padding:0"></y-lon>
                 <z-hei>height (z):<br><input id="z-in" type="text" placeholder="z is height" style="margin:0;padding:0"></z-hei>
             </yellow>
-            <magenta><location-point id="loki"></location-point><magentaline></magentaline></magenta>
+            <magenta><location-point id="loki"></location-point><magentaline></magentaline><img src="./icon/marker-red.svg" style="height:50px;"></magenta>
         </data>
 
         <!--DOWN-UNDER-->
@@ -183,7 +183,7 @@
         console.log("Latitude:", latLng.lat, "Longitude:", latLng.lng);
 
         // Füge einen Marker an der berechneten Position hinzu
-        var lokiMarker = L.marker();
+        //var lokiMarker = L.marker();
         //lokiMarker.bindPopup("Borehole #1").openPopup();
 
         // Übergabe der Koordinaten an die Eingabefelder
@@ -236,13 +236,13 @@
             latLng = map.containerPointToLatLng(containerPoint);
         
             // Aktualisiere die Position des Markers
-            if (lokiMarker) {
-                map.removeLayer(lokiMarker); // Entferne den alten Marker
-                console.log("Marker removed from map");
-                console.log("Aktualisiere Marker-Position:", latLng.lat, latLng.lng);
-                lokiMarker = L.marker(latLng).addTo(map); // Füge den neuen Marker hinzu
-                lokiMarker.bindPopup("Borehole #1").openPopup(); // Aktualisiere den Popup-Inhalt
-            };
+            //if (lokiMarker) {
+            //    map.removeLayer(lokiMarker); // Entferne den alten Marker
+            //    console.log("Marker removed from map");
+            //    console.log("Aktualisiere Marker-Position:", latLng.lat, latLng.lng);
+            //    lokiMarker = L.marker(latLng).addTo(map); // Füge den neuen Marker hinzu
+            //    lokiMarker.bindPopup("Borehole #1").openPopup(); // Aktualisiere den Popup-Inhalt
+            //};
 
             // Update Height
             getElevation(latLng.lat, latLng.lng).then(elevation => {
@@ -264,6 +264,8 @@
         // Event Listener für Layoutänderungen oder Fenstergrößenänderungen
         window.addEventListener('resize', updateLokiMarker);
         window.addEventListener('scroll', updateLokiMarker);
+        map.addEventListener('zoom', updateLokiMarker);
+        map.addEventListener('move', updateLokiMarker);
         
         // Initiale Aktualisierung des Markers
         updateLokiMarker();
