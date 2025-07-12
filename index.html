@@ -61,9 +61,9 @@
             <scale></scale>
             <north>north<img src="./icon/north.svg" style="width:16px; height:16px;"></north>
             <yellow>
-                <x-lat>latitude (x):<br><input id="x-in" type="text" placeholder="x is latitude" style="margin:0;padding:0"></x-lat>
-                <y-lon>longitude (y):<br><input id="y-in" type="text" placeholder="y is longitude" style="margin:0;padding:0"></y-lon>
-                <z-hei>height (z):<br><input id="z-in" type="text" placeholder="z is height" style="margin:0;padding:0"></z-hei>
+                <x-lat>latitude (x):<br><input id="x-in" type="text" placeholder="x is latitude" style="margin:0;padding:0;width:80px"></x-lat>
+                <y-lon>longitude (y):<br><input id="y-in" type="text" placeholder="y is longitude" style="margin:0;padding:0;width:80px"></y-lon>
+                <z-hei>height (z):<br><input id="z-in" type="text" placeholder="z is height" style="margin:0;padding:0;width:80px"></z-hei>
             </yellow>
             <magenta><location-point id="loki"></location-point><magentaline></magentaline><img src="./icon/marker-red.svg" style="height:50px;"></magenta>
         </data>
@@ -169,28 +169,11 @@
         /////////////////////////////////////
         /////////////////////////////////////
         
-        // SEITE WIRD GELADEN
+        // GET THE "GEO-MARKER"
 
         var loki = document.getElementById("loki");
-
-        // Berechne die Position des Elements relativ zum Kartencontainer
-        var rect = loki.getBoundingClientRect();
-        var mapRect = document.getElementById("map").getBoundingClientRect();
-
-        // Berechne die Pixelkoordinaten relativ zum Kartencontainer
-        var containerPoint = {
-            x: rect.left - mapRect.left + rect.width / 2, // X-Koordinate (Mitte des Elements)
-            y: rect.top - mapRect.top + rect.height / 2  // Y-Koordinate (Mitte des Elements)
-        };
-
-        // Wandle die Pixelkoordinaten in geografische Koordinaten um
-        var latLng = map.containerPointToLatLng(containerPoint);
-
-        // Übergabe der Koordinaten an die Eingabefelder
-        document.getElementById("x-in").value = latLng.lat.toFixed(6);
-        document.getElementById("y-in").value = latLng.lng.toFixed(6);
         
-        // Funktion zur Abfrage der Höhe
+        // Höhen-API
         async function getElevation(lat, lng) {
             const url = `https://api.open-elevation.com/api/v1/lookup?locations=${lat},${lng}`;
             try {
@@ -207,17 +190,6 @@
                 return null;
             }
         }
-        
-        // Berechne die Höhe an der Position von "loki"
-        (async () => {
-            const elevation = await getElevation(latLng.lat, latLng.lng);
-            if (elevation !== null) {
-                console.log("Höhe:", elevation, "Meter");
-        
-                // Übergabe der Höhe an das Eingabefeld
-                document.getElementById("z-in").value = elevation.toFixed(2); // Höhe mit 2 Dezimalstellen
-            }
-        })();
         
         // Funktion zur Aktualisierung des Markers basierend auf der Position von "loki"
         function updateLokiMarker() {
@@ -243,10 +215,11 @@
             debounceElevation(latLng.lat, latLng.lng);
         }
         
-       // Debouncing-Mechanismus für die Höhenabfrage
+       // Debouncing-Mechanismus Höhenabfrage
         let elevationTimeout;
         function debounceElevation(lat, lng) {
             clearTimeout(elevationTimeout); // Lösche vorherigen Timeout
+            document.getElementById("z-in").value = "Loading..."; // Setze Platzhaltertext während der Abfrage
             elevationTimeout = setTimeout(async () => {
                 const elevation = await getElevation(lat, lng);
                 if (elevation !== null) {
@@ -256,15 +229,7 @@
             }, 2000); // Wartezeit von 2 Sekunden
         }
 
-        // Update Height
-        getElevation(latLng.lat, latLng.lng).then(elevation => {
-                if (elevation !== null) {
-                    console.log("Aktualisierte Höhe:", elevation, "Meter");
-                    document.getElementById("z-in").value = elevation.toFixed(2); // Höhe mit 2 Dezimalstellen
-                }
-        });
-        
-        // Event Listener für Layoutänderungen oder Fenstergrößenänderungen
+        // Event Listener für Karten- oder Fenstergrößenänderungen
         window.addEventListener('resize', updateLokiMarker);
         window.addEventListener('scroll', updateLokiMarker);
         map.addEventListener('zoom', updateLokiMarker);
