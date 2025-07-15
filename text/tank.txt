@@ -1,6 +1,22 @@
-Beliebige Position-x und beliebige Position-y auf'm Screen
-Umrechnen der Screenkoordinaten in Mapkoordinaten des sichtbaren Kartenausschnittes
+zwei input-elemente einfügen (Substanz, Tiefe)...
+mit Button um zwei weitere input elemente einzufügen usw.
 
+Karten-Funktionen aktivieren/deaktivieren (locked/unlocked)
+=> Kartenposition/Map-Koordinaten am "Bohrpunkt" 
+
+logik zum speichern und abrufen (JSON usw., vorwärts, rückwärts)
+
+Layout-Änderunge entsprechend Plan (Tablet), plus-Icon vs. next-Icon
+
+Hinweise: Input-Elemente (bspw. Height muss sperrbar sein und manuelle Eingabe möglich, so wie bei den Koordinaten, nur muss dann die Karte dahin "springen".
+
+save bzw. unlocked/locked Icon zu den Koordinaten
+
+Bezeichner "latitude (x)" usw. benötigen weiß-transparenten Hintergrund (ähnlich "nort")
+
+Layout-Tag(e) einführen!
+
+Don't forget the anmition (like "how-to") for generating 3D-Model
 
 
 
@@ -62,5 +78,9 @@ relative- vs absolute-Position validieren
 Logo optimieren
 Globe bei Startansicht
 Sprache der Karten
+
+Alt:
+Beliebige Position-x und beliebige Position-y auf'm Screen
+Umrechnen der Screenkoordinaten in Mapkoordinaten des sichtbaren Kartenausschnittes
 
 
