@@ -66,7 +66,11 @@
                     <y-lon>longitude (y):<br><input id="y-in" type="text" placeholder="y is longitude" style="margin:0;padding:0;width:80px"></y-lon>
                     <z-hei>height (z):<br><input id="z-in" type="text" placeholder="z is height" style="margin:0;padding:0;width:80px"></z-hei>
                 </yellow>
-                <magenta><location-point id="loki"></location-point><magentaline></magentaline><img src="./icon/marker-red.svg" style="height:50px;"></magenta>
+                <magenta>
+                    <location-point id="loki" style="height:4px;width:4px;background-color:blue;position:absolute;"></location-point>
+                    <magentaline></magentaline>
+                    <img src="./icon/marker-red.svg" style="position:absolute;height:50px;">
+                </magenta>
             </oben>
             <unten>    
                 <cyan>
@@ -75,9 +79,14 @@
                 </cyan>
                 <green>
                     <preview></preview>
+                    <greenline></greenline>
                 </green>
-                <purple></purple>
             </unten>
+            <weiter>
+                <purple></purple>
+                <violett></violett>
+            </weiter>
+            
         </data>
 
         <!--DOWN-UNDER-->
