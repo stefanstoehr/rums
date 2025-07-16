@@ -163,29 +163,37 @@ data {
     border: 1px solid rgb(0, 0, 0);
     border-radius: 15px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    justify-content: center;
     background-color: hidden;
     pointer-events: none;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
 }
 
 oben {
-    position: absolute;
     width: 100%;
-    height: 30%;
-    min-height: 100px;
-    top: 0;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+unten {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+weiter {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 yellow {
-    position: absolute;
     width: 50%;
     height: 100%;
-    top:0;
-    left:0;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     align-items: end;
@@ -195,42 +203,18 @@ yellow {
 }
 
 magenta {
-    position: absolute;
     width: 50%;
     height: 100%;
-    top:0;
-    right:0;
     display: flex;
     align-items: end;
     justify-content: center;
     background-color: rgba(255, 0, 255, 0.5);
 }
 
-magentaline{
-    position: absolute;
-    bottom: 0px;
-    left: -50%;
-    width: 100%;
-    border-bottom: 1px solid rgb(0, 0, 0);
-    z-index: -1;
-}
-
-unten {
-    position: absolute;
-    width: 100%;
-    height: 70%;
-    min-height: 100px;
-    bottom:0;
-    /*background-color: rgba(255, 0, 0, 0.5);*/
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
 cyan {
     background-color: rgba(0, 255, 255, 0.5);
     width: 50%;
-    height: 100px;
+    height: 100%;
     display: grid;
     grid-template-rows: 1fr 1fr;
     align-items: end;
@@ -241,24 +225,51 @@ cyan {
 green {
     background-color: rgba(60, 255, 0, 0.5);
     width: 50%;
-    height: 100px;
+    height: 100%;
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
     font-size: 0.5rem;
-}
-
-preview {
-    width: 50%;
-    height: 100%;
-    /*background-color: rgba(76, 0, 255, 0.5);*/
-    border: 1px solid black; /* Definiert einen schwarzen Rand */
 }
 
 purple {
     width: 50%;
     height: 100px;
-    background-color: rgba(76, 0, 255, 0.5);
+    background-color: rgba(76, 0, 255, 0.3);
+}
+
+violett {
+    width: 50%;
+    height: 100px;
+    background-color: rgba(186, 85, 211, 0.5);
+}
+
+magentaline{
+    position: relative;
+    bottom: 0px;
+    left: -50%;
+    width: 100%;
+    border-bottom: 1px dashed rgb(0, 0, 0);
+    z-index: -1;
+}
+
+preview {
+    position: absolute;
+    width: 25%;
+    height: 99px;
+    border: 1px solid black;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+greenline {
+    position: relative;
+    bottom: 0px;
+    left: -50%;
+    width: 100%;
+    border-bottom: 1px dashed rgb(0, 0, 0);
+    z-index: -1;
 }
 
 epsg-vote {
