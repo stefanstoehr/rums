@@ -10,9 +10,8 @@
      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
-    <div id="thor" style="z-index: 10000 ;position:absolute; left:100px; top:100px; height: 5px; width: 5px; background-color: blueviolet;"></div>
     <div id="map"></div>
-    
+
     <div class="container">
 
         <!--BAR-->
@@ -83,8 +82,10 @@
                 </green>
             </unten>
             <weiter>
-                <purple></purple>
-                <violett></violett>
+                <purple>
+                    <newlay>+ new layer</newlay>
+                    <deletelay>- delete new</deletelay>
+                </purple>
             </weiter>
             
         </data>
@@ -100,8 +101,7 @@
             <a href="https://leafletjs.com" target="_blank" style="text-decoration: none;display:flex;align-items:center;">
                 <img id="leaflet" src="./icon/leaflet.png" style="height:22px;width:22px;">
             </a>
-        </copyright>
-           
+        </copyright>          
         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="text-decoration: none;display:flex;align-items:center;">
             <license>
                 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 24px; width: 24px; padding-right:5px">
@@ -110,22 +110,22 @@
                 <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="height: 24px; width: 24px;">           
             </license>
         </a>     
-
+    
     </div>   
     
     <script>
         
-        // Initialisiere die Karte
+        // Initialisiere Karte
         var map = L.map('map', {
             zoomControl: false,
             attributionControl: false,
         }).setView([20, 0], 3);
 
-        // OpenStreetMap Layer
+        // OSM Layer
         var osmLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map); // Standardmäßig hinzufügen
+        }).addTo(map);
 
         // ArcGIS Layer
         var arcgisLayer = L.tileLayer('http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -133,10 +133,9 @@
             attribution: '&copy; <a href="https://www.esri.com/">Esri</a>'
         });
 
-        // Scale Control
+        // Handle Scale Control
         const scaleControl = L.control.scale({ maxWidth: 150, imperial: false }).addTo(map);
 
-        // Verschiebe den Scale Control in das <scale>-Element
         const scaleElement = document.querySelector('scale');
         scaleElement.appendChild(scaleControl._container);
 
@@ -154,32 +153,28 @@
             }
         });
 
-        // "Rums"-Label
+        // "Rums"-Label Responsiveness
         const logoElement = document.querySelector('logo');
         const originalText = "Rapid Underground Model Simulation";
         const abbreviation = "Rums";
 
-        // Funktion zum Aktualisieren des Textes
         function updateLogoText() {
-            const textNode = logoElement.querySelector('span'); // Wähle den Text innerhalb des logo-Elements
+            const textNode = logoElement.querySelector('span');
             if (window.innerWidth < 970) {
-                textNode.textContent = abbreviation; // Ändere den Text zu "RUMS"
+                textNode.textContent = abbreviation;
             } else {
-                textNode.textContent = originalText; // Ändere den Text zurück zum Original
+                textNode.textContent = originalText;
             }
         }
 
-        // Initialisiere den Text
         if (!logoElement.querySelector('span')) {
             const textNode = document.createElement('span');
             textNode.textContent = originalText;
             logoElement.appendChild(textNode);
         }
 
-        // Event Listener für Änderungen der Fenstergröße
         window.addEventListener('resize', updateLogoText);
 
-        // Initiale Prüfung beim Laden der Seite
         updateLogoText();
 
         /////////////////////////////////////
@@ -190,18 +185,18 @@
         /////////////////////////////////////
         /////////////////////////////////////
         
-        // GET THE "GEO-MARKER"
+        // Get Pseudo-Marker
 
         var loki = document.getElementById("loki");
         
-        // Höhen-API
+        // Height-API
         async function getElevation(lat, lng) {
             const url = `https://api.open-elevation.com/api/v1/lookup?locations=${lat},${lng}`;
             try {
                 const response = await fetch(url);
                 const data = await response.json();
                 if (data.results && data.results.length > 0) {
-                    return data.results[0].elevation; // Rückgabe der Höhe
+                    return data.results[0].elevation;
                 } else {
                     console.error("Keine Höheninformationen gefunden.");
                     return null;
@@ -212,27 +207,27 @@
             }
         }
         
-        // Funktion zur Aktualisierung des Markers basierend auf der Position von "loki"
+        // Update Coords
         function updateLokiMarker() {
             
-            // Berechne die Position des Elements relativ zum Kartencontainer
+            // Calc Pos Pseudo-Marker
             const rect = loki.getBoundingClientRect();
             const mapRect = document.getElementById("map").getBoundingClientRect();
         
-            // Berechne die Pixelkoordinaten relativ zum Kartencontainer
+            // Calc Pixel-Coords
             const containerPoint = {
                 x: rect.left - mapRect.left + rect.width / 2, // X-Koordinate (Mitte des Elements)
                 y: rect.top - mapRect.top + rect.height / 2  // Y-Koordinate (Mitte des Elements)
             };
         
-            // Wandle die Pixelkoordinaten in geografische Koordinaten um
+            // Change to Geo-Coords
             const latLng = map.containerPointToLatLng(containerPoint);
         
-            // Optional: Aktualisiere die Eingabefelder
+            // Update Input-Elements
             document.getElementById("x-in").value = latLng.lat.toFixed(6);
             document.getElementById("y-in").value = latLng.lng.toFixed(6);
 
-            // Verzögerte Höhenabfrage
+            // Reduce API-Requests
             debounceElevation(latLng.lat, latLng.lng);
         }
         
@@ -258,6 +253,42 @@
         
         // Initiale Aktualisierung des Markers
         updateLokiMarker();
+
+        // NEW LAYER Button
+        const newLayerButton = document.querySelector('newlay');
+
+        newLayerButton.addEventListener('click', function () {
+            // Wähle den Tag "unten" aus
+            const unten = document.querySelector('unten');
+
+            // Klone den Tag "unten"
+            const clonedUnten = unten.cloneNode(true);
+
+            // Füge den geklonten Tag "unten" über dem Tag "weiter" ein
+            const weiter = document.querySelector('weiter');
+            weiter.parentNode.insertBefore(clonedUnten, weiter);
+            console.log("Neuer Layer hinzugefügt");
+        });
+
+        // Delete New Layer Button
+        const deleteNewButton = document.querySelector('deletelay');
+
+        deleteNewButton.addEventListener('click', function () {
+            // Wähle alle "unten"-Elemente aus
+            const allUntenElements = document.querySelectorAll('unten');
+
+            // Überprüfe, ob mehr als ein "unten"-Element vorhanden ist
+            if (allUntenElements.length > 1) {
+                // Wähle das zuletzt hinzugefügte "unten"-Element
+                const lastUnten = allUntenElements[allUntenElements.length - 1];
+
+                // Entferne das zuletzt hinzugefügte "unten"-Element
+                lastUnten.remove();
+                console.log("Letzter Layer entfernt");
+            } else {
+                console.log("Das erste Element 'unten' darf nicht gelöscht werden.");
+            }
+        });
 
     </script>
     

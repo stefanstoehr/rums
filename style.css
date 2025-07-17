@@ -73,7 +73,7 @@ help-map {
     z-index: 1000;
 }
 
-/*SWITCH*/
+/* schwitsch */
 schwitsch {
     display: inline-block;
     width: 30px;
@@ -81,7 +81,7 @@ schwitsch {
     margin-left: 5px;
 }
 
-/* The switch - the box around the slider */
+/* box around the slider */
 .switch {
     position: relative;
     display: inline-block;
@@ -96,7 +96,7 @@ schwitsch {
     height: 0;
 }
   
-/* The slider */
+/* slider */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -132,6 +132,7 @@ input:checked + .slider:before {
     -ms-transform: translateX(13px);
     transform: translateX(13px);
 }
+
 /*CONTROLLER*/
 control {
     grid-area: control;
@@ -164,7 +165,7 @@ data {
     border-radius: 15px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     background-color: hidden;
-    pointer-events: none;
+    pointer-events: auto;
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -233,15 +234,15 @@ green {
 }
 
 purple {
-    width: 50%;
+    width: 100%;
     height: 100px;
     background-color: rgba(76, 0, 255, 0.3);
-}
-
-violett {
-    width: 50%;
-    height: 100px;
-    background-color: rgba(186, 85, 211, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    gap:25%;
 }
 
 magentaline{
@@ -270,6 +271,28 @@ greenline {
     width: 100%;
     border-bottom: 1px dashed rgb(0, 0, 0);
     z-index: -1;
+}
+
+newlay {
+    width: 25%;
+    height: 33px;
+    background-color: #26ce00;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+deletelay {
+    width: 25%;
+    height: 33px;
+    background-color: #26ce00;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 epsg-vote {
@@ -338,6 +361,7 @@ hole-back {
     align-items: center;
     justify-content: center;
 }
+
 hole-next {
     position: absolute;
     font-size: 1rem;
@@ -354,6 +378,7 @@ hole-next {
     align-items: center;
     justify-content: center;
 }
+
 hole-kill {
     position: absolute;
     font-size: 1rem;
@@ -369,6 +394,7 @@ hole-kill {
     align-items: center;
     justify-content: center;
 }
+
 hole-make{
     position: absolute;
     font-size: 1rem;
@@ -484,10 +510,10 @@ license {
     z-index: 1000;
 }
 
-/*MAP*/
+/* MAP */
+
 #map {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    /*filter: blur(4px);*/
 }
