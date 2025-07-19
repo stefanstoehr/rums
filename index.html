@@ -255,7 +255,14 @@
         // Initiale Aktualisierung des Markers
         updateLokiMarker();
 
-        // NEW LAYER Button
+        /////////////////////////////////////
+        /////////////////////////////////////
+        /////////////////////////////////////
+        ////////////  NEW LAYER  ////////////
+        /////////////////////////////////////
+        /////////////////////////////////////
+        /////////////////////////////////////
+
         const newLayerButton = document.querySelector('newlay');
 
         newLayerButton.addEventListener('click', function () {
@@ -264,6 +271,12 @@
 
             // Klone den Tag "unten"
             const clonedUnten = unten.cloneNode(true);
+
+            // Leere alle Input-Felder im geklonten Layer
+            const inputs = clonedUnten.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.value = ''; // Setzt den Wert des Input-Felds auf leer
+            });
 
             // Füge den geklonten Tag "unten" über dem Tag "weiter" ein
             const weiter = document.querySelector('weiter');
