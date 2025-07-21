@@ -1,3 +1,6 @@
+Controller löschen
+Container Grid-template-areas anpassen
+
 zwei input-elemente einfügen (Substanz, Tiefe)...
 mit Button um zwei weitere input elemente einzufügen usw.
 

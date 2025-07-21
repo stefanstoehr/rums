@@ -43,20 +43,30 @@
             </schwitsch>
         </help-map>
        
-        <!--CONTROLLER-->
-        <control>1 / 1</control>
-
         <!--DATA-INPUT-->   
         <data>
-            <epsg-vote><globe-area><img src="./icon/globe.svg" style="width:22px; height:22px;"></globe-area>
-                <input id="epsg-input" type="text" placeholder="type EPSG">
+            <control>
+                <img src="./icon/dash-circle.svg" style="width:22px; height:22px;position:absolute;left: 4px;">
+                <img src="./icon/plus-circle.svg" style="width:22px; height:22px;position:absolute;right: 4px;">
+                1 / 1
+            </control>
+            <epsg-vote>
+                <img src="./icon/globe-green.svg" style="width:22px; height:22px;position:absolute;left: 4px;">
+                <img src="./icon/check-circle.svg" style="width:22px; height:22px;position:absolute;right: 4px;">
+                EPSG: 4326
+                <!--
+                <globe-area><img src="./icon/globe.svg" style="width:22px; height:22px;"></globe-area>
+                <input id="epsg-input" type="text" placeholder="EPSG 4326">
                 <img id="epsg-check" src="./icon/check.svg" style="width:22px; height:22px;">
+                -->
             </epsg-vote>
-            <hole-back><img src="./icon/back.svg" style="width:22px; height:22px;"></hole-back>
-            <hole-next><img src="./icon/next.svg" style="width:22px; height:22px;"></hole-next>
+            <hole-back><img src="./icon/back.svg" style="width:30px; height:30px;"></hole-back>
+            <hole-next><img src="./icon/next.svg" style="width:30px; height:30px;"></hole-next>
+            <!--
             <hole-kill><img src="./icon/kill.svg" style="width:22px; height:22px;"></hole-kill>
             <hole-make><img src="./icon/make.svg" style="width:22px; height:22px;"></hole-make>
-            <make-rums><img src="./icon/logo.svg" style="width:30px; height:30px; transform:rotate(180deg)"></make-rums>
+            -->
+            <!--<make-rums><img src="./icon/logo.svg" style="width:30px; height:30px; transform:rotate(180deg)"></make-rums>-->
             <scale></scale>
             <north>north<img src="./icon/north.svg" style="width:16px; height:16px;"></north>
             <oben>    

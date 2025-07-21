@@ -20,12 +20,13 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    grid-template-rows: 7% 16% 65% 12%; 
+    grid-template-rows: 7% 6% 65% 10% 12%; 
     grid-template-columns: 7% 30% 26% 30% 7%; 
     grid-template-areas:  
     "git-don git-don logo help-map help-map" 
     ". control control control ."
     ". data data data ." 
+    ". . . . ."
     ". . . . .";
 }
 
@@ -135,30 +136,13 @@ input:checked + .slider:before {
     transform: translateX(13px);
 }
 
-/*CONTROLLER*/
-control {
-    grid-area: control;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #c5c5c5;
-    font-size: 0.8rem;
-    width: 150px;
-    height: 30px;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 15px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
 /*DATA-INPUT*/
 data {
     width: 86%;
-    height: auto;
+    height: 70%;
     grid-area: data;
     position: absolute;
-    top: 23vh;
+    
     bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
@@ -303,6 +287,26 @@ deletelay {
     justify-content: center;
 }
 
+/*CONTROLLER*/
+control {
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    color: #c5c5c5;
+    font-size: 0.8rem;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
 epsg-vote {
     position: absolute;
     width: 150px;
@@ -310,10 +314,12 @@ epsg-vote {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #c5c5c5;
+    background-color: rgba(0, 0, 0, 0.8);
     border: 1px solid rgb(0, 0, 0);
     border-radius: 15px;
-    top: -16px;
+    color: #c5c5c5;
+    font-size: 0.8rem;
+    bottom: -16px;
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
