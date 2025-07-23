@@ -32,6 +32,7 @@ body {
 
 /*BAR*/
 git-don {
+    height: auto;
     grid-area: git-don;
     color: black;
     font-size: 0.8rem;
@@ -54,6 +55,7 @@ donate {
 }
 
 logo {
+    height: auto;
     grid-area: logo;
     color: #c5c5c5;
     font-size: 0.8rem;
@@ -65,6 +67,7 @@ logo {
 }
 
 help-map {
+    height: auto;
     grid-area: help-map;
     font-size: 0.8rem;
     padding-right: 15px;
@@ -274,7 +277,7 @@ greenline{
 
 preview {
     width: 50%;
-    height: 98px;
+    height: 100%;
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
