@@ -177,7 +177,7 @@ oben {
     /*min-height: 100px;*/
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 1px dashed black;
+    border-bottom: 1px solid black;
 }
 
 unterseite {
