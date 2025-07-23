@@ -27,7 +27,7 @@ body {
     ". . . . ."
     ". data data data ." 
     ". rums-all rums-all rums-all ."
-    ". . scale . .";
+    ". . . . .";
 }
 
 /*BAR*/
@@ -138,8 +138,8 @@ input:checked + .slider:before {
 
 /*DATA-INPUT*/
 data {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     grid-area: data;
     position: relative; 
     font-size: 1rem;
@@ -158,8 +158,8 @@ rums-all {
     z-index: 1000;
     position: relative;
     margin-top: 25px;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     background-color: rgba(0, 0, 0, 0.8);
     color: #c5c5c5;
     display: flex;
@@ -174,7 +174,7 @@ rums-all {
 oben {
     width: 100%;
     height: 25%;
-    min-height: 100px;
+    /*min-height: 100px;*/
     display: flex;
     flex-wrap: wrap;
     border-bottom: 1px dashed black;
@@ -183,13 +183,13 @@ oben {
 unterseite {
     width: 100%;
     height: 75%;
-    min-height: 200px;
+    /*min-height: 200px;*/
     overflow-y: auto;
 }
 
 unten {
     width: 100%;
-    height: 100px;
+    height: 33.33%;
     display: flex;
     flex-wrap: wrap;
     border-bottom: 1px dashed black;
@@ -197,7 +197,7 @@ unten {
 
 weiter {
     width: 100%;
-    height: 100px;
+    height: 33.33%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -236,7 +236,7 @@ cyan {
 green {
     background-color: rgba(60, 255, 0, 0.5);
     width: 50%;
-    height: 100px;
+    height: 100%;
     font-size: 0.5rem;
     display: flex;
     align-items: center;
@@ -246,7 +246,7 @@ green {
 
 purple {
     width: 100%;
-    height: 100px;
+    height: 100%;
     background-color: rgba(76, 0, 255, 0.3);
     display: flex;
     flex-wrap: wrap;
@@ -456,9 +456,9 @@ make-rums {
 }
 
 scale {
-    grid-area: scale;
-    position: relative;
-    bottom: -20px;
+    /*grid-area: scale;*/
+    position: absolute;
+    bottom: 30px;
     font-size: 0.5rem;
     width: auto;
     height: auto;
@@ -466,6 +466,8 @@ scale {
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 north {
