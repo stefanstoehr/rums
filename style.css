@@ -16,8 +16,8 @@ body {
 
 .container {
     
-    height:100vh;
-    width:100vw;
+    height:100%;
+    width:100%;
     display: grid;
     margin: 0;
     padding: 0;
@@ -571,4 +571,29 @@ license {
     width: 100vw;
     height: 100vh;
     position: absolute;
+}
+
+flex-container {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    height:auto;
+    width:100vw;
+    top:0px;
+    bottom:0px;
+    display: flex;
+    flex-direction: column;
+}
+zeile1 {
+    background-color: yellow;
+    flex-grow: 0.2;
+    
+}
+zeile3 {
+    background-color: magenta;
+    flex-grow: 1;
+}
+zeile4 {
+    background-color: orange;
+    flex-grow: 0.2;
 }
