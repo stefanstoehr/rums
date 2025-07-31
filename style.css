@@ -25,7 +25,7 @@ body {
     grid-template-rows: 7% 8% 60% 10% 15%; 
     grid-template-columns: 7% 30% 26% 30% 7%; 
     grid-template-areas:  
-    "git-don git-don logo help-map help-map" 
+    ". . . . ." 
     ". . . . ."
     ". data data data ." 
     ". rums-all rums-all rums-all ."
@@ -583,10 +583,19 @@ flex-container {
     bottom:0px;
     display: flex;
     flex-direction: column;
+    z-index: 1000;
 }
 zeile1 {
     background-color: yellow;
     flex-grow: 0.2;
+    display: grid;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    grid-template-rows: 100%; 
+    grid-template-columns: 37% 26% 37%;
+    grid-template-areas:  
+    "git-don logo help-map"; 
     
 }
 zeile3 {
