@@ -612,7 +612,7 @@ zeile4 {
     background-color: orange;
     flex-grow: 0.2;
 }
-stuff {
+layout-basic {
     position: absolute;
     background-color: red;
     height: 100%;
