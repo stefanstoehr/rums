@@ -17,8 +17,8 @@
         <zeile1>
 
             <layout-basic>
-                <div class="sec1"><img src="./icon/github.svg" style="height:fit-content;"></div>
-                <div class="sec2">World</div>
+                <div class="sec1"><img id="github-logo" src="./icon/github.svg">code</div>
+                <div class="sec2"><img id="github-logo" src="./icon/github.svg">World</div>
                 <div class="sec3">People</div>
                 <!--BAR-->
                 <!--
@@ -173,7 +173,7 @@
     </flex-container>
     
     <script>
-        
+        /*
         // Initialisiere Karte
         var map = L.map('map', {
             zoomControl: false,
@@ -361,6 +361,20 @@
                 console.log("Das erste Element 'unten' darf nicht gelöscht werden.");
             }
         });
+*/
+        // Funktion zur Aktualisierung der SVG-Höhe
+        function updateGithubLogoHeight() {
+            const githubLogo = document.getElementById("github-logo");
+            const parentHeight = githubLogo.parentElement.offsetHeight;
+            console.log("Parent Height:", parentHeight); // Debugging-Ausgabe
+            githubLogo.style.height = `${parentHeight * 0.8}px`;
+        }
+
+        // Initiale Berechnung der SVG-Höhe
+        updateGithubLogoHeight();
+
+        // Event-Listener für Änderungen des Viewports (z. B. durch Drehen des Smartphones)
+        window.addEventListener('resize', updateGithubLogoHeight);
 
     </script>
     
